@@ -1,4 +1,6 @@
 
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,36 @@
     {% endif %}
 </head>
 <body>
+    
     <h1> {{message}} </h1>
+
+    {% block content%}
+
+
+    <!-- <div class="container">
+        <form>
+            <input type="text" name="source_query" placeholder="Search for a News" class="form-control">
+            <input type="submit"  value="Search" class="btn btn-default btn-sm">
+        </form>
+    
+    </div>
+
+    <hr> -->
+
+
+    <div class="container-fluid">
+        
+            <h1 style="color: black;"> Trending News Sources</h1>
+            <hr>
+            <hr>
+    
+            {{ macro.displaySourceList(sources)}}
+    
+        
+    </div>
+    
+    
+    {%endblock%}
+
 </body>
 </html>
