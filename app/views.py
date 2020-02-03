@@ -10,3 +10,11 @@ def index():
     '''
     message = 'WELCOME TO NEWS HIGHLIGHT APP'
     return render_template('index.html',message = message)
+
+@app.route('/sources/<int:sources_id>')
+def sources(sources_id):
+
+    '''
+    View sources page function that returns the sources details page and its data
+    '''
+    return render_template('sources.html',id = sources_id)
