@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_sources,get_articles
+from .request import get_sources,get_articles,search_source
 
 # Views
 @app.route('/')
@@ -29,3 +29,17 @@ def articles(id):
 	title = f'NH | {id}'
 
 	return render_template('articles.html',title= title,articles = articles)
+
+
+######### search
+
+@app.route('/search/<source_name>')
+def search(search_name):
+    '''
+    View function to display the search results
+    '''
+    source_name_list = source_name.split(" ")
+    source_name_format = "+".join(source_name_list)
+    searched_sources = search_source(source_name_format)
+    title = f'search results for {source_name}'
+    return render_template('search.html',sources = searched_sources)
