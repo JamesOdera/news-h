@@ -38,13 +38,7 @@ def get_sources(category):
 
 
 def process_sources(source_list):
-	'''
-	Function that processes the news sources results and turns them into a list of objects
-	Args:
-		sources_list: A list of dictionaries that contain sources details
-	Returns:
-		sources_results: A list of sources objects
-	'''
+	
 	source_results = []
 
 	for source_item in source_list:
@@ -108,7 +102,7 @@ def process_articles(articles_list):
     ############## SEARCH NEWS
 
 def search_source(source_name):
-    search_source_url = 'https://newsapi.org/v2/search/sources?apiKey={}&query={}'.format(api_key,source_name)
+    search_source_url = 'https://newsapi.org/v2/sources?apiKey=c7e4aad3be1347a9aab0ecd2b4c850f5'.format(api_key,source_name)
     with urllib.request.urlopen(search_source_url) as url:
         search_source_data = url.read()
         search_source_response = json.loads(search_source_data)
