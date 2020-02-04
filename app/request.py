@@ -1,16 +1,21 @@
-from app import app
 import urllib.request,json
-from .models import source,articles
+from .models import Source,Article
 
-Source = source.Source
-Article = articles.Article
 
 # Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = None
 
-base_url = app.config["NEWS_API_BASE_URL"]
+base_url = None
 
-articles_url = app.config['ARTICLES_BASE_URL']
+articles_url = None
+
+
+def configure_request(app):
+	global api_key,base_url,articles_url
+	api_key = app.config['NEWS_API_KEY']
+	base_url = app.config['NEWS_API_BASE_URL']
+	articles_url = app.config['ARTICLES_BASE_URL']
+
 
 
 def get_sources(category):
@@ -103,7 +108,7 @@ def process_articles(articles_list):
     ############## SEARCH NEWS
 
 def search_source(source_name):
-    search_source_url = 'https://newsapi.org/v2/sources?apiKey={}&query={}'.format(api_key,source_name)
+    search_source_url = 'https://newsapi.org/v2/search/sources?apiKey={}&query={}'.format(api_key,source_name)
     with urllib.request.urlopen(search_source_url) as url:
         search_source_data = url.read()
         search_source_response = json.loads(search_source_data)
