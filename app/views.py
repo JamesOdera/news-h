@@ -41,7 +41,7 @@ def articles(id):
 ######### search
 
 @app.route('/search/<source_name>')
-def search(search_name):
+def search(source_name):
     '''
     View function to display the search results
     '''
