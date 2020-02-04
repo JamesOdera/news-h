@@ -1,4 +1,4 @@
-# [News Highlights Application](url)
+# [News Highlights Application](https://news-h-69.herokuapp.com/)
 
 ## Author
 James Odera
@@ -24,7 +24,7 @@ With the application, a user will be able to:
 - virtual environment
 - code text  Editor
 
-### CODEBEAT  [![codebeat badge](https://codebeat.co/badges/3cf4d4f8-9360-47f4-a240-b7c9a41ecdb1)](https://codebeat.co/projects/github-com-jamesodera-newshighlight-master)
+### CODEBEAT  [![codebeat badge](https://codebeat.co/badges/1e20305c-9fea-46b5-8ad0-efb79778bfde)](https://codebeat.co/projects/github-com-jamesodera-news-h-master)
 
 ## Technologies Used
 
